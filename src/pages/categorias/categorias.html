@@ -7,5 +7,9 @@
 </ion-header>
 
 <ion-content padding>
-  <p>Página de Categorias</p>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="showProdutos(item.id)">
+      <h2> {{ item.nome }} </h2>
+    </button>
+  </ion-list>
 </ion-content>
