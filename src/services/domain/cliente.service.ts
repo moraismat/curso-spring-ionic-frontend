@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Rx";
+import { StorageService } from "../storage.service";
 import { ClienteDTO } from "../../models/cliente.dto";
 import { API_CONFIG } from "../../config/api.config";
-import { StorageService } from "../storage.service";
 
 @Injectable()
 export class ClienteService {
@@ -14,17 +14,5 @@ export class ClienteService {
     findByEmail(email: string): Observable<ClienteDTO> {
         
         return this.http.get<ClienteDTO>(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`);
-    }
-
-    insert(obj : ClienteDTO) {
-        console.log(obj)
-        return this.http.post(
-            `${API_CONFIG.baseUrl}/clientes`, 
-            obj,
-            { 
-                observe: 'response', 
-                responseType: 'text'
-            }
-        ); 
     }
 }

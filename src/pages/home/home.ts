@@ -32,11 +32,19 @@ export class HomePage {
 
   ionViewDidEnter() {
     this.auth.refreshToken()
+<<<<<<< HEAD
       .subscribe(res => {
         this.auth.successfulLogin(res.headers.get('Authorization')),
         this.navCtrl.setRoot('CategoriasPage');
       },
       error => {});
+=======
+      .subscribe(response => {
+        this.auth.successfulLogin(response.headers.get('Authorization'));
+        this.navCtrl.setRoot('CategoriasPage');
+      },
+      error => {});  
+>>>>>>> b3a53fc14b9e253e647593ef2745e5aabe43fe31
   }
 
   login() {
@@ -48,8 +56,12 @@ export class HomePage {
       error => {});
   }
 
+<<<<<<< HEAD
   signup() {
     this.navCtrl.push('SignupPage')
   }
+=======
+
+>>>>>>> b3a53fc14b9e253e647593ef2745e5aabe43fe31
 
 }
