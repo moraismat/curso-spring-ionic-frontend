@@ -47,7 +47,7 @@ export class OrderConfirmationPage {
   }
 
   private findEndereco(id: string, list: EnderecoDTO[]): EnderecoDTO {
-    let position = list.findIndex(x => x.id = id)
+    let position = list.findIndex(x => x.id = id);
     return list[position]
   }
 
